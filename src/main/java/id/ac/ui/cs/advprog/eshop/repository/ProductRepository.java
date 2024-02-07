@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
-    static long ID = 0;
+    static long ID = 1;
 
     public Product create(Product product) {
         product.setProductID(Long.toString(ID));
@@ -21,6 +21,9 @@ public class ProductRepository {
 
     public Product update(String productId, Product updatedProduct) {
         Product product = findById(productId);
+        if (product == null) {
+            return null;
+        }
         product.setProductName(updatedProduct.getProductName());
         product.setProductQuantity(updatedProduct.getProductQuantity());
         return product;
@@ -28,6 +31,9 @@ public class ProductRepository {
 
     public Product delete(String productID) {
         Product product = findById(productID);
+        if (product == null) {
+            return null;
+        }
         productData.remove(product);
         return product;
     }
