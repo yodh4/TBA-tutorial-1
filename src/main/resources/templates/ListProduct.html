@@ -22,6 +22,11 @@
         <tr th:each="product: ${products}">
             <td th:text="${product.productName}"></td>
             <td th:text="${product.productQuantity}"></td>
+            <td>
+                <a th:href="@{'/product/edit/' + ${product.productID}}">
+                    <button class="btn btn-primary btn-sm" style="background-color: blue;">Edit</button>
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
