@@ -27,8 +27,9 @@ Yang masih bisa dikembangkan dari kode saya pada projek ini adalah pada bagian *
 
 # Reflection 2
 
-Setelah membuat unit test saya rasa kita bisa menjadi lebih paham tentang kode yang kita buat termasuk kasus-kasus yang belum ter*cover* oleh kode kita. 
+1. Setelah membuat unit test saya rasa kita bisa menjadi lebih paham tentang kode yang kita buat termasuk kasus-kasus yang belum ter*cover* oleh kode kita. 
 Saya rasa jika memungkinkan kita harus menulis unit test sebanyak yang kita bisa dengan asumsi setiap tes mengecek kombinasi *case* yang berbeda.
-
 Selain itu saya juga belajar bahwa kode yang memiliki 100% *coverage* bukan berarti kode kita sudah bebas dari bug karena *code coverage* hanya menunjukan seberapa banyak kode kita
 yang sudah tercover oleh test yang kita buat tetapi bisa saja test yang kita buat tidak meng*cover* kasus-kasus tertentu.
+
+2. Setelah saya membuat functional test untuk membuat produk saya rasa saya akan tetap menggunakan cara yang saya gunakan sekarang untuk membuat functional test untuk menghitung jumlah produk pada list produk karena saya rasa kode yang saya sekarang sudah cukup efisien dan bisa bekerja dengan baik
