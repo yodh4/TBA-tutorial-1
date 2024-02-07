@@ -16,7 +16,6 @@ public class ProductRepository {
         product.setProductID(Long.toString(ID));
         ID++;
         productData.add(product);
-        printAllProducts();
         return product;
     }
 
