@@ -27,4 +27,15 @@ class ProductTest {
     void testGetProductQuantity() {
         assertEquals(100, this.product.getProductQuantity());
     }
+
+    @Test
+    void testGetNegativeValue() {
+        this.product = new Product();
+        this.product.setProductID("-99");
+        this.product.setProductName("Sampo Cap Bambang");
+        this.product.setProductQuantity(-1234);
+
+        assertEquals("-99", this.product.getProductID());
+        assertEquals(-1234, this.product.getProductQuantity());
+    }
 }
