@@ -1,4 +1,4 @@
-name: Sonarcloud
+name: Sonarcloud Scan
 
 on:
   # Trigger analysis when pushing or pull requests, and when creating
