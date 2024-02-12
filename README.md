@@ -33,3 +33,6 @@ Selain itu saya juga belajar bahwa kode yang memiliki 100% *coverage* bukan bera
 yang sudah tercover oleh test yang kita buat tetapi bisa saja test yang kita buat tidak meng*cover* kasus-kasus tertentu.
 
 2. Setelah saya membuat functional test untuk membuat produk saya rasa saya akan tetap menggunakan cara yang saya gunakan sekarang untuk membuat functional test untuk menghitung jumlah produk pada list produk karena saya rasa kode yang saya sekarang sudah cukup efisien dan bisa bekerja dengan baik
+
+
+- tes redeploy
