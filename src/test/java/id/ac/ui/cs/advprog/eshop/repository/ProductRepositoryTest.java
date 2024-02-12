@@ -20,8 +20,7 @@ public class ProductRepositoryTest {
     ProductRepository productRepository;
     @BeforeEach
     void setUp() {
-        // Reset the ID before each test
-        ProductRepository.ID = 1;
+
     }
     @Test
     void testCreateAndFind() {
