@@ -20,6 +20,8 @@ public class ProductRepositoryTest {
     ProductRepository productRepository;
     @BeforeEach
     void setUp() {
+        // Reset the ID before each test
+        ProductRepository.ID = 1;
     }
     @Test
     void testCreateAndFind() {
@@ -83,6 +85,7 @@ public class ProductRepositoryTest {
         product3.setProductQuantity(25);
         productRepository.create(product3);
 
+        assertEquals(product3, productRepository.findById("3"));
         assertEquals(product2, productRepository.findById("2"));
         assertEquals(product1, productRepository.findById("1"));
         assertNotEquals(product3, productRepository.findById("2"));
