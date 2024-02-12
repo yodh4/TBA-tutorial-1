@@ -10,11 +10,11 @@ import java.util.List;
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
-    static long ID = 1;
+     private long ID = 1;
 
     public Product create(Product product) {
-        product.setProductID(Long.toString(ID));
-        ID++;
+        product.setProductID(Long.toString(this.ID));
+        this.ID++;
         productData.add(product);
         return product;
     }
