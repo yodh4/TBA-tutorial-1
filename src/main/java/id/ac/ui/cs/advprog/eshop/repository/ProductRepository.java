@@ -1,16 +1,20 @@
 package id.ac.ui.cs.advprog.eshop.repository;
 
 import id.ac.ui.cs.advprog.eshop.model.Product;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
      private long ID = 1;
+    Logger logger = LoggerFactory.getLogger(ProductRepository.class);
 
     public Product create(Product product) {
         product.setProductID(Long.toString(this.ID));
@@ -52,12 +56,12 @@ public class ProductRepository {
     }
 
     public void printAllProducts() {
-        System.out.println("List of Products:");
+        logger.info("List of Products:");
         for (Product product : productData) {
-            System.out.println("Product ID: " + product.getProductID());
-            System.out.println("Product Name: " + product.getProductName());
-            System.out.println("Product Quantity: " + product.getProductQuantity());
-            System.out.println("------------------------");
+            logger.info("Product ID: " + product.getProductID());
+            logger.info("Product Name: " + product.getProductName());
+            logger.info("Product Quantity: " + product.getProductQuantity());
         }
+        logger.info("------------------------");
     }
 }
