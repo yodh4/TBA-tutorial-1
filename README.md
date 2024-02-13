@@ -35,4 +35,12 @@ yang sudah tercover oleh test yang kita buat tetapi bisa saja test yang kita bua
 2. Setelah saya membuat functional test untuk membuat produk saya rasa saya akan tetap menggunakan cara yang saya gunakan sekarang untuk membuat functional test untuk menghitung jumlah produk pada list produk karena saya rasa kode yang saya sekarang sudah cukup efisien dan bisa bekerja dengan baik
 
 
-- tes redeploy
+
+# Tutorial 2
+# Reflection
+1.  Mengubah field static ID pada productRepository menajadi non static
+
+   Sebelumnya saya menggunakan static variable untuk men-set ID pada setiap product, namun Sonarcloud mendteksi bagian kode tersebut sebagai *code smeels* dan akhirnya saya menggantinya menjadi non static variabel dan meng-*increment* variabel ID dengan `this.ID++` setiap memanggil method `create` pada `productRepository`
+   
+2. Mengubah method `System.out.println()` pada method `printAllProduct` yang saya gunakan untuk melakukan *debugging*
+     Saya pertama kali menggunakan method `println()` untuk mengecek `field` Product setelah memanggil method `create()`. Hal ini saya lakukan karena saya tidak terbiasa menggunakan `logger` untuk melakukan *debugging*, namun Sonarcloud ternyata mendeteksi hal tersebut sebagai *code smeels* dan akhirnya saya menggantinya dengan menggunakan `logger`
