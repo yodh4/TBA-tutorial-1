@@ -38,9 +38,14 @@ yang sudah tercover oleh test yang kita buat tetapi bisa saja test yang kita bua
 
 # Tutorial 2
 # Reflection
-1.  Mengubah field static ID pada productRepository menajadi non static
+
+1. 
+* Mengubah field static ID pada productRepository menajadi non static
 
    Sebelumnya saya menggunakan static variable untuk men-set ID pada setiap product, namun Sonarcloud mendteksi bagian kode tersebut sebagai *code smeels* dan akhirnya saya menggantinya menjadi non static variabel dan meng-*increment* variabel ID dengan `this.ID++` setiap memanggil method `create` pada `productRepository`
-   
-2. Mengubah method `System.out.println()` pada method `printAllProduct` yang saya gunakan untuk melakukan *debugging*
-     Saya pertama kali menggunakan method `println()` untuk mengecek `field` Product setelah memanggil method `create()`. Hal ini saya lakukan karena saya tidak terbiasa menggunakan `logger` untuk melakukan *debugging*, namun Sonarcloud ternyata mendeteksi hal tersebut sebagai *code smeels* dan akhirnya saya menggantinya dengan menggunakan `logger`
+
+* Mengubah method `System.out.println()` pada method `printAllProduct`untuk melakukan *debugging*
+
+   Saya pertama kali menggunakan method `println()` untuk mengecek `field` Product setelah memanggil method `create()`. Hal ini saya lakukan karena saya tidak terbiasa menggunakan `logger` untuk melakukan *debugging*, namun Sonarcloud ternyata mendeteksi hal tersebut sebagai *code smeels* dan akhirnya saya menggantinya dengan menggunakan `logger`
+
+2. Menurut saya implementasi *workflow* saya pada modul kali ini sudah memenuhi definisi CI/CD, hal ini terlihat dari proses github actions di mana setiap terdapat `push` ke repo github, kode tersebut akan dites terlebih dahulu melalui workflow yang ada, selain itu kode saya pada modul ini juga sudah mengaplikasikan workflow Sonarcloud dan PMD yang dapat memeriksa seberapa *clean* kode saya sehingga jika terdapat masalah bisa langsung diperbaiki dan mencegah kemungkinan adanya bagian kode yang tidak terintegrasi dengan baik. Untuk bagian *continuous deployment* sendiri sudah diterapkan dengan cara melakukan merge ke branch `main` jika seluruh kode sudah siap untuk di-*deploy* dan akan otomatis ter-deploy ke platform yang ada.
