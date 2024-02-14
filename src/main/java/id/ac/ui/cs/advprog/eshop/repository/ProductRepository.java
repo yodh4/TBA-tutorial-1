@@ -13,12 +13,12 @@ import org.slf4j.LoggerFactory;
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
-     private long ID = 1;
+     private long id = 1;
     Logger logger = LoggerFactory.getLogger(ProductRepository.class);
 
     public Product create(Product product) {
-        product.setProductID(Long.toString(this.ID));
-        this.ID++;
+        product.setProductID(Long.toString(this.id));
+        this.id++;
         productData.add(product);
         return product;
     }
