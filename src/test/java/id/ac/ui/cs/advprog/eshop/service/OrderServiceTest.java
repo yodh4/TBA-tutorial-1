@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.internal.matchers.Or;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
@@ -118,7 +117,7 @@ class OrderServiceTest {
     @Test
     void testFindAllByAuthorIfAuthorCorrect() {
         Order order = orders.get(1);
-        doReturn(order).when(orderRepository).findAllByAuthor(order.getAuthor());
+        doReturn(orders).when(orderRepository).findAllByAuthor(order.getAuthor());
 
         List<Order> results = orderService.findAllByAuthor(order.getAuthor());
         for (Order result : results) {
