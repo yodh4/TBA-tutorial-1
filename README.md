@@ -114,3 +114,15 @@ yang sudah tercover oleh test yang kita buat tetapi bisa saja test yang kita bua
         kita ingin menambahkan suatu fitur tertentu. Hal ini tentunya berbahaya karena jika kode yang sudah ada kita rubah
         bisa jadi perubahan tersebut memiliki dampak terhadap kode lain yang saling dependent dan dapat menyebabkan masalah
         yang lebih kompleks
+---
+
+# Modul 4
+# Reflection 1
+1. Berdasarkan tutorial yang saya ikuti saya merasa penggunaan TDD adalah hal baru bagi saya, ini pertama kalinya
+    saya menggunakan workflow TDD dan saya merasa dengan menggunakan workflow ini kita dapat mengcoding dengan lebih
+    efisien karena kita mulai koding dengan membuat test terlebih dahulu sehingga saat membuat implementasinya kita bisa
+    langsung menyesuaikan dengan implementasi yang sudah kita buat. Selain itu dengan menggunakan TDD kode kita jadi lebih
+    mudah dimaintain karena setiap perubahan terhadap kode kita, bisa kita langsung tes dengan unit test yang sudah kita buat
+    sebelumnya. Kelebihan lain dari menggunakan workflow TDD adalah saya dapat cepat mengetahui jika ada bug pada kode saya karena
+    terdeteksi lebih dulu oleh test yang sudah dibuat.
+2. 
