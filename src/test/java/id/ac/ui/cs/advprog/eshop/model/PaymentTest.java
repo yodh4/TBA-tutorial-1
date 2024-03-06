@@ -15,8 +15,8 @@ public class PaymentTest {
         Map<String, String> paymentData = new HashMap<>();
         Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b",
                 "Credit Card", "REJECTED", paymentData);
-        assertFalse(payment.getMethod.equals("Voucher Code") || payment.getMethod.equals("Bank Transfer"));
-        assertTrue(payment.getStatus.equals("REJECTED"));
+        assertFalse(payment.getMethod().equals("Voucher Code") || payment.getMethod().equals("Bank Transfer"));
+        assertTrue(payment.getStatus().equals("REJECTED"));
     }
 
     @Test
@@ -24,6 +24,6 @@ public class PaymentTest {
         Map<String, String> paymentData = new HashMap<>();
         Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b",
                 "Bank Transfer", "ACCEPTED", paymentData);
-        assertTrue(payment.getMethod.equals("Voucher Code") || payment.getMethod.equals("Bank Transfer"));
+        assertTrue(payment.getMethod().equals("Voucher Code") || payment.getMethod().equals("Bank Transfer"));
     }
 }
