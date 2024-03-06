@@ -23,7 +23,41 @@ public class PaymentTest {
     void testIfPaymentMethodIsTrue() {
         Map<String, String> paymentData = new HashMap<>();
         Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b",
-                "Bank Transfer", "ACCEPTED", paymentData);
+                "Bank Transfer", "SUCCESS", paymentData);
         assertTrue(payment.getMethod().equals("Voucher Code") || payment.getMethod().equals("Bank Transfer"));
     }
+
+    @Test
+    void testCreatePaymentInvalidStatus() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Map<String, String> paymentData = new HashMap<>();
+            paymentData.put("voucherCode", "ESHOP88888888AAA");
+            Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b",
+                    "Voucher", "TESTING", paymentData);
+        });
+    }
+    @Test
+    void testIfVoucherIsSuccess() {
+        Map<String, String> paymentData = new HashMap<>();
+        paymentData.put("voucherCode", "ESHOP88888888AAA");
+        Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b",
+                "Voucher Code", "SUCCESS", paymentData);
+        assertEquals(paymentData, payment.getPaymentData());
+        assertEquals("Voucher Code", payment.getMethod());
+        assertEquals("SUCCESS", payment.getStatus());
+    }
+
+    @Test
+    void testIfBankTransferIsSuccess() {
+        Map<String, String> paymentData = new HashMap<>();
+        paymentData.put("bankName", "bankTara");
+        paymentData.put("referenceCode", "12345");
+        Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b",
+                "Bank Transfer", "SUCCESS", paymentData);
+        assertEquals(paymentData, payment.getPaymentData());
+        assertEquals("Bank Transfer", payment.getMethod());
+        assertEquals("SUCCESS", payment.getStatus());
+    }
+
+
 }
